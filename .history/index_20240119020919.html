@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1562860149-691401a306f8?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <title>Question and Solution Page</title>
+</head>
+<body class="bg-red-100 flex items-center justify-center h-screen">
+
+    <div class="bg-black bg-opacity-70 p-8 rounded shadow-md w-full md:w-96 text-white">
+        <h1 class="text-2xl font-bold mb-4">Question:</h1>
+        <p class="text-gray-300 mb-6">What is the capital of France?</p>
+
+        <button id="showSolutionBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+            Show Solution
+        </button>
+
+        <div id="solutionBox" class="hidden mt-4">
+            <h2 class="text-xl font-bold mb-2">Solution:</h2>
+            <p class="text-gray-300">The capital of France is Paris.</p>
+            <button id="closeSolutionBtn" class="mt-2 text-sm text-gray-400 underline focus:outline-none">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const showSolutionBtn = document.getElementById('showSolutionBtn');
+        const closeSolutionBtn = document.getElementById('closeSolutionBtn');
+        const solutionBox = document.getElementById('solutionBox');
+
+        showSolutionBtn.addEventListener('click', () => {
+            solutionBox.classList.remove('hidden');
+        });
+
+        closeSolutionBtn.addEventListener('click', () => {
+            solutionBox.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
